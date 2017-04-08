@@ -1,5 +1,5 @@
 //**********************************************************
-//	PROJECT BANKING
+//	Project: Banking
 //	Built By: Nishant Srivastava
 //**********************************************************
 
@@ -108,8 +108,8 @@ void shape::line_hor(int column1, int column2, int row, char c)
 {
     for (column1; column1 <= column2; column1++)
     {
-	gotoxy(column1, row);
-	cout << c;
+        gotoxy(column1, row);
+        cout << c;
     }
 }
 
@@ -121,8 +121,8 @@ void shape::line_ver(int row1, int row2, int column, char c)
 {
     for (row1; row1 <= row2; row1++)
     {
-	gotoxy(column, row1);
-	cout << c;
+        gotoxy(column, row1);
+        cout << c;
     }
 }
 
@@ -137,21 +137,21 @@ void shape::box(int column1, int row1, int column2, int row2, char c)
     char l1 = 196, l2 = 179;
     if (c == ch)
     {
-	c1 = 218;
-	c2 = 191;
-	c3 = 192;
-	c4 = 217;
-	l1 = 196;
-	l2 = 179;
+        c1 = 218;
+        c2 = 191;
+        c3 = 192;
+        c4 = 217;
+        l1 = 196;
+        l2 = 179;
     }
     else
     {
-	c1 = c;
-	c2 = c;
-	c3 = c;
-	c4 = c;
-	l1 = c;
-	l2 = c;
+        c1 = c;
+        c2 = c;
+        c3 = c;
+        c4 = c;
+        l1 = c;
+        l2 = c;
     }
     gotoxy(column1, row1);
     cout << c1;
@@ -182,69 +182,69 @@ void control::main_menu(void)
     char ch;
     while (1)
     {
-	clrscr();
-	shape s;
-	s.box(10, 5, 71, 21, 219);
-	s.box(9, 4, 72, 22, 218);
-	textcolor(BLACK);
-	textbackground(WHITE);
-	gotoxy(32, 7);
-	cprintf(" B A N K I N G ");
-	gotoxy(35, 9);
-	cprintf(" OPTIONS ");
-	textcolor(LIGHTGRAY);
-	textbackground(BLACK);
-	gotoxy(30, 11);
-	cout << "1: SEE ACCOUNT";
-	gotoxy(30, 12);
-	cout << "2: LIST OF ACCOUNTS";
-	gotoxy(30, 13);
-	cout << "3: TRANSACTIONS";
-	gotoxy(30, 14);
-	cout << "4: OPEN NEW ACCOUNT";
-	gotoxy(30, 15);
-	cout << "5: EDIT ACCOUNTS";
-	gotoxy(30, 16);
-	cout << "6: HELP";
-	gotoxy(30, 17);
-	cout << "0: QUIT";
-	gotoxy(30, 19);
-	cout << "Enter your choice: ";
-	ch = getche();
-	if (ch == 27)
-	    break;
-	else if (ch == '1')
-	{
-	    account a;
-	    a.display_account();
-	}
-	else if (ch == '2')
-	{
-	    initial ini;
-	    ini.display_list();
-	}
-	else if (ch == '3')
-	{
-	    account a;
-	    a.transaction();
-	}
-	else if (ch == '4')
-	{
-	    account a;
-	    a.new_account();
-	}
-	else if (ch == '5')
-	    edit_menu();
-	else if (ch == '6')
-	    help();
-	else if (ch == '0')
-	    break;
+        clrscr();
+        shape s;
+        s.box(10, 5, 71, 21, 219);
+        s.box(9, 4, 72, 22, 218);
+        textcolor(BLACK);
+        textbackground(WHITE);
+        gotoxy(32, 7);
+        cprintf(" B A N K I N G ");
+        gotoxy(35, 9);
+        cprintf(" OPTIONS ");
+        textcolor(LIGHTGRAY);
+        textbackground(BLACK);
+        gotoxy(30, 11);
+        cout << "1: SEE ACCOUNT";
+        gotoxy(30, 12);
+        cout << "2: LIST OF ACCOUNTS";
+        gotoxy(30, 13);
+        cout << "3: TRANSACTIONS";
+        gotoxy(30, 14);
+        cout << "4: OPEN NEW ACCOUNT";
+        gotoxy(30, 15);
+        cout << "5: EDIT ACCOUNTS";
+        gotoxy(30, 16);
+        cout << "6: HELP";
+        gotoxy(30, 17);
+        cout << "0: QUIT";
+        gotoxy(30, 19);
+        cout << "Enter your choice: ";
+        ch = getche();
+        if (ch == 27)
+            break;
+        else if (ch == '1')
+        {
+            account a;
+            a.display_account();
+        }
+        else if (ch == '2')
+        {
+            initial ini;
+            ini.display_list();
+        }
+        else if (ch == '3')
+        {
+            account a;
+            a.transaction();
+        }
+        else if (ch == '4')
+        {
+            account a;
+            a.new_account();
+        }
+        else if (ch == '5')
+            edit_menu();
+        else if (ch == '6')
+            help();
+        else if (ch == '0')
+            break;
     }
     for (int i = 25; i >= 1; i--)
     {
-	delay(20);
-	gotoxy(1, i);
-	clreol();
+        delay(20);
+        gotoxy(1, i);
+        clreol();
     }
 }
 
@@ -257,41 +257,41 @@ void control::edit_menu(void)
     char ch;
     while (1)
     {
-	clrscr();
-	shape s;
-	s.box(10, 5, 71, 21, 219);
-	s.box(9, 4, 72, 22, 218);
-	textcolor(BLACK);
-	textbackground(WHITE);
-	gotoxy(34, 10);
-	cprintf(" EDIT MENU ");
-	textcolor(LIGHTGRAY);
-	textbackground(BLACK);
-	gotoxy(31, 12);
-	cout << "1: MODIFY ACCOUNT";
-	gotoxy(31, 13);
-	cout << "2: CLOSE ACCOUNT";
-	gotoxy(31, 14);
-	cout << "0: QUIT";
-	gotoxy(31, 16);
-	cout << "Enter your choice: ";
-	ch = getche();
-	if (ch == 27)
-	    break;
-	else if (ch == '1')
-	{
-	    initial ini;
-	    ini.modify();
-	    break;
-	}
-	else if (ch == '2')
-	{
-	    account a;
-	    a.close_account();
-	    break;
-	}
-	else if (ch == '0')
-	    break;
+        clrscr();
+        shape s;
+        s.box(10, 5, 71, 21, 219);
+        s.box(9, 4, 72, 22, 218);
+        textcolor(BLACK);
+        textbackground(WHITE);
+        gotoxy(34, 10);
+        cprintf(" EDIT MENU ");
+        textcolor(LIGHTGRAY);
+        textbackground(BLACK);
+        gotoxy(31, 12);
+        cout << "1: MODIFY ACCOUNT";
+        gotoxy(31, 13);
+        cout << "2: CLOSE ACCOUNT";
+        gotoxy(31, 14);
+        cout << "0: QUIT";
+        gotoxy(31, 16);
+        cout << "Enter your choice: ";
+        ch = getche();
+        if (ch == 27)
+            break;
+        else if (ch == '1')
+        {
+            initial ini;
+            ini.modify();
+            break;
+        }
+        else if (ch == '2')
+        {
+            account a;
+            a.close_account();
+            break;
+        }
+        else if (ch == '0')
+            break;
     }
 }
 
@@ -356,9 +356,9 @@ void control::help(void)
     getch();
     for (int i = 25; i >= 1; i--)
     {
-	delay(20);
-	gotoxy(1, i);
-	clreol();
+        delay(20);
+        gotoxy(1, i);
+        clreol();
     }
 }
 
@@ -374,7 +374,7 @@ int initial::last_accno(void)
     file.seekg(0, ios::beg);
     int count = 0;
     while (file.read((char *)this, sizeof(initial)))
-	count = accno;
+        count = accno;
     file.close();
     return count;
 }
@@ -392,9 +392,9 @@ int initial::recordno(int t_accno)
     int count = 0;
     while (file.read((char *)this, sizeof(initial)))
     {
-	count++;
-	if (t_accno == accno)
-	    break;
+        count++;
+        if (t_accno == accno)
+            break;
     }
     file.close();
     return count;
@@ -414,18 +414,18 @@ void initial::display(int t_accno)
     file.seekg(0, ios::beg);
     while (file.read((char *)this, sizeof(initial)))
     {
-	if (t_accno == accno)
-	{
-	    gotoxy(8, 5);
-	    cout << "ACCOUNT NO. " << accno;
-	    gotoxy(10, 8);
-	    cout << "Name    : " << name;
-	    gotoxy(10, 9);
-	    cout << "Address : " << address;
-	    gotoxy(10, 10);
-	    cout << "Balance : " << balance;
-	    break;
-	}
+        if (t_accno == accno)
+        {
+            gotoxy(8, 5);
+            cout << "ACCOUNT NO. " << accno;
+            gotoxy(10, 8);
+            cout << "Name    : " << name;
+            gotoxy(10, 9);
+            cout << "Address : " << address;
+            gotoxy(10, 10);
+            cout << "Balance : " << balance;
+            break;
+        }
     }
     file.close();
 }
@@ -443,11 +443,11 @@ char *initial::return_name(int t_accno)
     char t_name[30];
     while (file.read((char *)this, sizeof(initial)))
     {
-	if (accno == t_accno)
-	{
-	    strcpy(t_name, name);
-	    break;
-	}
+        if (accno == t_accno)
+        {
+            strcpy(t_name, name);
+            break;
+        }
     }
     file.close();
     return t_name;
@@ -466,11 +466,11 @@ char *initial::return_address(int t_accno)
     char t_address[60];
     while (file.read((char *)this, sizeof(initial)))
     {
-	if (accno == t_accno)
-	{
-	    strcpy(t_address, address);
-	    break;
-	}
+        if (accno == t_accno)
+        {
+            strcpy(t_address, address);
+            break;
+        }
     }
     file.close();
     return t_address;
@@ -489,11 +489,11 @@ float initial::give_balance(int t_accno)
     float t_balance;
     while (file.read((char *)this, sizeof(initial)))
     {
-	if (accno == t_accno)
-	{
-	    t_balance = balance;
-	    break;
-	}
+        if (accno == t_accno)
+        {
+            t_balance = balance;
+            break;
+        }
     }
     file.close();
     return t_balance;
@@ -512,11 +512,11 @@ int initial::found_account(int t_accno)
     int found = 0;
     while (file.read((char *)this, sizeof(initial)))
     {
-	if (accno == t_accno)
-	{
-	    found = 1;
-	    break;
-	}
+        if (accno == t_accno)
+        {
+            found = 1;
+            break;
+        }
     }
     file.close();
     return found;
@@ -536,7 +536,7 @@ void initial::box_for_list()
     textbackground(WHITE);
     gotoxy(3, 4);
     for (int i = 1; i <= 76; i++)
-	cprintf(" ");
+        cprintf(" ");
     textbackground(BLACK);
     textcolor(BLACK);
     textbackground(WHITE);
@@ -568,32 +568,32 @@ void initial::display_list(void)
     file.open("INITIAL.DAT", ios::in);
     while (file.read((char *)this, sizeof(initial)))
     {
-	flag = 0;
-	delay(10);
-	gotoxy(7, row);
-	cout << accno;
-	gotoxy(25, row);
-	cout << name;
-	gotoxy(57, row);
-	cout << balance;
-	row++;
-	if (row == 23)
-	{
-	    flag = 1;
-	    row = 6;
-	    gotoxy(4, 24);
-	    cout << "Press any key to continue...";
-	    getch();
-	    clrscr();
-	    box_for_list();
-	}
+        flag = 0;
+        delay(10);
+        gotoxy(7, row);
+        cout << accno;
+        gotoxy(25, row);
+        cout << name;
+        gotoxy(57, row);
+        cout << balance;
+        row++;
+        if (row == 23)
+        {
+            flag = 1;
+            row = 6;
+            gotoxy(4, 24);
+            cout << "Press any key to continue...";
+            getch();
+            clrscr();
+            box_for_list();
+        }
     }
     file.close();
     if (!flag)
     {
-	gotoxy(4, 24);
-	cout << "Press any key to continue...";
-	getch();
+        gotoxy(4, 24);
+        cout << "Press any key to continue...";
+        getch();
     }
 }
 
@@ -628,11 +628,11 @@ void initial::delete_account(int t_accno)
     file.seekg(0, ios::beg);
     while (!file.eof())
     {
-	file.read((char *)this, sizeof(initial));
-	if (file.eof())
-	    break;
-	if (accno != t_accno)
-	    temp.write((char *)this, sizeof(initial));
+        file.read((char *)this, sizeof(initial));
+        if (file.eof())
+            break;
+        if (accno != t_accno)
+            temp.write((char *)this, sizeof(initial));
     }
     file.close();
     temp.close();
@@ -641,10 +641,10 @@ void initial::delete_account(int t_accno)
     temp.seekg(0, ios::beg);
     while (!temp.eof())
     {
-	temp.read((char *)this, sizeof(initial));
-	if (temp.eof())
-	    break;
-	file.write((char *)this, sizeof(initial));
+        temp.read((char *)this, sizeof(initial));
+        if (temp.eof())
+            break;
+        file.write((char *)this, sizeof(initial));
     }
     file.close();
     temp.close();
@@ -708,14 +708,14 @@ void initial::modify(void)
     t = atoi(t_acc);
     t_accno = t;
     if (t_accno == 0)
-	return;
+        return;
     clrscr();
     if (!found_account(t_accno))
     {
-	gotoxy(5, 5);
-	cout << "\7Account not found";
-	getch();
-	return;
+        gotoxy(5, 5);
+        cout << "\7Account not found";
+        getch();
+        return;
     }
     shape s;
     s.box(2, 2, 79, 24, 218);
@@ -726,7 +726,7 @@ void initial::modify(void)
     textbackground(WHITE);
     gotoxy(3, 3);
     for (int i = 1; i <= 76; i++)
-	cprintf(" ");
+        cprintf(" ");
     textbackground(BLACK);
     textcolor(BLACK + BLINK);
     textbackground(WHITE);
@@ -747,16 +747,16 @@ void initial::modify(void)
     account a;
     do
     {
-	a.clear(5, 13);
-	gotoxy(5, 13);
-	cout << "Modify this account (y/n): ";
-	ch = getche();
-	if (ch == '0')
-	    return;
-	ch = toupper(ch);
+        a.clear(5, 13);
+        gotoxy(5, 13);
+        cout << "Modify this account (y/n): ";
+        ch = getche();
+        if (ch == '0')
+            return;
+        ch = toupper(ch);
     } while (ch != 'N' && ch != 'Y');
     if (ch == 'N')
-	return;
+        return;
     int modified = 0, valid;
     char t_name[30], t_address[60];
     gotoxy(5, 15);
@@ -765,63 +765,63 @@ void initial::modify(void)
     cout << "Address : ";
     do
     {
-	a.clear(15, 15);
-	a.clear(5, 23);
-	gotoxy(5, 23);
-	cout << "ENTER NAME ";
-	valid = 1;
-	gotoxy(15, 15);
-	gets(t_name);
-	strupr(t_name);
-	if (t_name[0] == '0')
-	    return;
-	if (strlen(t_name) > 25)
-	{
-	    valid = 0;
-	    gotoxy(5, 23);
-	    cprintf("\7NAME SHOULD NOT GREATER THAN 25");
-	    getch();
-	}
+        a.clear(15, 15);
+        a.clear(5, 23);
+        gotoxy(5, 23);
+        cout << "ENTER NAME ";
+        valid = 1;
+        gotoxy(15, 15);
+        gets(t_name);
+        strupr(t_name);
+        if (t_name[0] == '0')
+            return;
+        if (strlen(t_name) > 25)
+        {
+            valid = 0;
+            gotoxy(5, 23);
+            cprintf("\7NAME SHOULD NOT GREATER THAN 25");
+            getch();
+        }
     } while (!valid);
     if (strlen(t_name) > 0)
-	modified = 1;
+        modified = 1;
     do
     {
-	a.clear(15, 16);
-	a.clear(5, 23);
-	gotoxy(5, 23);
-	cout << "ENTER ADDRESS ";
-	valid = 1;
-	gotoxy(15, 16);
-	gets(t_address);
-	strupr(t_address);
-	if (t_address[0] == '0')
-	    return;
-	if (strlen(t_address) > 55)
-	{
-	    valid = 0;
-	    gotoxy(5, 23);
-	    cprintf("\7SHOULD NOT BLANK OR GREATER THAN 55");
-	    getch();
-	}
+        a.clear(15, 16);
+        a.clear(5, 23);
+        gotoxy(5, 23);
+        cout << "ENTER ADDRESS ";
+        valid = 1;
+        gotoxy(15, 16);
+        gets(t_address);
+        strupr(t_address);
+        if (t_address[0] == '0')
+            return;
+        if (strlen(t_address) > 55)
+        {
+            valid = 0;
+            gotoxy(5, 23);
+            cprintf("\7SHOULD NOT BLANK OR GREATER THAN 55");
+            getch();
+        }
     } while (!valid);
     if (strlen(t_address) > 0)
-	modified = 1;
+        modified = 1;
     if (!modified)
-	return;
+        return;
     a.clear(5, 23);
     do
     {
-	a.clear(5, 18);
-	gotoxy(5, 18);
-	cout << "Do you want to save changes (y/n): ";
-	ch = getche();
-	if (ch == '0')
-	    return;
-	ch = toupper(ch);
+        a.clear(5, 18);
+        gotoxy(5, 18);
+        cout << "Do you want to save changes (y/n): ";
+        ch = getche();
+        if (ch == '0')
+            return;
+        ch = toupper(ch);
     } while (ch != 'N' && ch != 'Y');
     if (ch == 'N')
-	return;
+        return;
     modify_account(t_accno, t_name, t_address);
     gotoxy(5, 21);
     cout << "\7Record Modified";
@@ -838,8 +838,8 @@ void account::clear(int col, int row)
 {
     for (int i = col; i <= 78; i++)
     {
-	gotoxy(i, row);
-	cout << " ";
+        gotoxy(i, row);
+        cout << " ";
     }
 }
 
@@ -879,11 +879,11 @@ void account::delete_account(int t_accno)
     file.seekg(0, ios::beg);
     while (!file.eof())
     {
-	file.read((char *)this, sizeof(account));
-	if (file.eof())
-	    break;
-	if (accno != t_accno)
-	    temp.write((char *)this, sizeof(account));
+        file.read((char *)this, sizeof(account));
+        if (file.eof())
+            break;
+        if (accno != t_accno)
+            temp.write((char *)this, sizeof(account));
     }
     file.close();
     temp.close();
@@ -892,10 +892,10 @@ void account::delete_account(int t_accno)
     temp.seekg(0, ios::beg);
     while (!temp.eof())
     {
-	temp.read((char *)this, sizeof(account));
-	if (temp.eof())
-	    break;
-	file.write((char *)this, sizeof(account));
+        temp.read((char *)this, sizeof(account));
+        if (temp.eof())
+            break;
+        file.write((char *)this, sizeof(account));
     }
     file.close();
     temp.close();
@@ -921,7 +921,7 @@ void account::new_account(void)
     textbackground(WHITE);
     gotoxy(3, 3);
     for (i = 1; i <= 76; i++)
-	cprintf(" ");
+        cprintf(" ");
     textbackground(BLACK);
     textcolor(BLACK + BLINK);
     textbackground(WHITE);
@@ -941,10 +941,10 @@ void account::new_account(void)
     t_accno++;
     if (t_accno == 1)
     {
-	ini.add_to_file(t_accno, "abc", "xyz", 1.1);
-	ini.delete_account(t_accno);
-	add_to_file(t_accno, 1, 1, 1997, 'D', "INITIAL", 1.1, 1.1, 1.1);
-	delete_account(t_accno);
+        ini.add_to_file(t_accno, "abc", "xyz", 1.1);
+        ini.delete_account(t_accno);
+        add_to_file(t_accno, 1, 1, 1997, 'D', "INITIAL", 1.1, 1.1, 1.1);
+        delete_account(t_accno);
     }
     char t_name[30], t[10], t_address[60];
     float t_bal = 0.0, t_balance = 0.0;
@@ -963,101 +963,101 @@ void account::new_account(void)
     cout << "Initial Deposit : ";
     do
     {
-	clear(15, 10);
+        clear(15, 10);
 
-	clear(5, 23);
-	gotoxy(5, 23);
-	cout << "ENTER NAME OF THE PERSON";
-	valid = 1;
-	gotoxy(15, 10);
-	gets(t_name);
-	strupr(t_name);
-	if (t_name[0] == '0')
-	    return;
-	if (strlen(t_name) == 0 || strlen(t_name) > 25)
-	{
-	    valid = 0;
-	    gotoxy(5, 23);
-	    cprintf("\7NAME SHOULD NOT BLANK OR GREATER THAN 25");
-	    getch();
-	}
+        clear(5, 23);
+        gotoxy(5, 23);
+        cout << "ENTER NAME OF THE PERSON";
+        valid = 1;
+        gotoxy(15, 10);
+        gets(t_name);
+        strupr(t_name);
+        if (t_name[0] == '0')
+            return;
+        if (strlen(t_name) == 0 || strlen(t_name) > 25)
+        {
+            valid = 0;
+            gotoxy(5, 23);
+            cprintf("\7NAME SHOULD NOT BLANK OR GREATER THAN 25");
+            getch();
+        }
     } while (!valid);
     do
     {
-	clear(15, 11);
-	clear(5, 23);
-	gotoxy(5, 23);
-	cout << "ENTER ADDRESS OF THE PERSON";
-	valid = 1;
-	gotoxy(15, 11);
-	gets(t_address);
-	strupr(t_address);
-	if (t_address[0] == '0')
-	    return;
-	if (strlen(t_address) == 0 || strlen(t_address) > 55)
-	{
-	    valid = 0;
-	    gotoxy(5, 23);
-	    cprintf("\7SHOULD NOT BLANK OR GREATER THAN 55");
-	    getch();
-	}
+        clear(15, 11);
+        clear(5, 23);
+        gotoxy(5, 23);
+        cout << "ENTER ADDRESS OF THE PERSON";
+        valid = 1;
+        gotoxy(15, 11);
+        gets(t_address);
+        strupr(t_address);
+        if (t_address[0] == '0')
+            return;
+        if (strlen(t_address) == 0 || strlen(t_address) > 55)
+        {
+            valid = 0;
+            gotoxy(5, 23);
+            cprintf("\7SHOULD NOT BLANK OR GREATER THAN 55");
+            getch();
+        }
     } while (!valid);
     do
     {
-	char vari[30];
-	clear(31, 12);
-	clear(5, 23);
-	gotoxy(5, 23);
-	cout << "ENTER NAME OF THE VERIFYING PERSON";
-	valid = 1;
-	gotoxy(31, 12);
-	gets(vari);
-	strupr(vari);
-	if (vari[0] == '0')
-	    return;
-	if (strlen(vari) == 0 || strlen(vari) > 25)
-	{
-	    valid = 0;
-	    gotoxy(5, 23);
-	    cprintf("\7SHOULD NOT BLANK OR GREATER THAN 25");
-	    getch();
-	}
+        char vari[30];
+        clear(31, 12);
+        clear(5, 23);
+        gotoxy(5, 23);
+        cout << "ENTER NAME OF THE VERIFYING PERSON";
+        valid = 1;
+        gotoxy(31, 12);
+        gets(vari);
+        strupr(vari);
+        if (vari[0] == '0')
+            return;
+        if (strlen(vari) == 0 || strlen(vari) > 25)
+        {
+            valid = 0;
+            gotoxy(5, 23);
+            cprintf("\7SHOULD NOT BLANK OR GREATER THAN 25");
+            getch();
+        }
     } while (!valid);
     do
     {
-	clear(23, 14);
-	clear(5, 23);
-	gotoxy(5, 23);
-	cout << "ENTER INITIAL AMOUNT TO BE DEPOSIT";
-	valid = 1;
-	gotoxy(23, 14);
-	gets(t);
-	t_bal = atof(t);
-	t_balance = t_bal;
-	if (t[0] == '0')
-	    return;
-	if (t_balance < 500)
-	{
-	    valid = 0;
-	    gotoxy(5, 23);
-	    cprintf("\7SHOULD NOT LESS THAN 500          ");
-	    getch();
-	}
+        clear(23, 14);
+        clear(5, 23);
+        gotoxy(5, 23);
+        cout << "ENTER INITIAL AMOUNT TO BE DEPOSIT";
+        valid = 1;
+        gotoxy(23, 14);
+        gets(t);
+        t_bal = atof(t);
+        t_balance = t_bal;
+        if (t[0] == '0')
+            return;
+        if (t_balance < 500)
+        {
+            valid = 0;
+            gotoxy(5, 23);
+            cprintf("\7SHOULD NOT LESS THAN 500          ");
+            getch();
+        }
     } while (!valid);
     clear(5, 23);
     do
     {
-	clear(5, 17);
-	valid = 1;
-	gotoxy(5, 17);
-	cout << "Do you want to save the record (y/n) : ";
-	ch = getche();
-	if (ch == '0')
-	    return;
-	ch = toupper(ch);
+        clear(5, 17);
+        valid = 1;
+        gotoxy(5, 17);
+        cout << "Do you want to save the record (y/n) : ";
+        ch = getche();
+        if (ch == '0')
+            return;
+        ch = toupper(ch);
     } while (ch != 'N' && ch != 'Y');
     if (ch == 'N')
-	return;
+        return;
     float t_amount, t_interest;
     t_amount = t_balance;
     t_interest = 0.0;
@@ -1083,7 +1083,7 @@ void account::box_for_display(int t_accno)
     textbackground(WHITE);
     gotoxy(3, 5);
     for (int i = 1; i <= 76; i++)
-	cprintf(" ");
+        cprintf(" ");
     textbackground(BLACK);
     textcolor(BLACK);
     textbackground(WHITE);
@@ -1129,15 +1129,15 @@ void account::display_account(void)
     t = atoi(t_acc);
     t_accno = t;
     if (t_accno == 0)
-	return;
+        return;
     clrscr();
     initial ini;
     if (!ini.found_account(t_accno))
     {
-	gotoxy(5, 5);
-	cout << "\7Account not found";
-	getch();
-	return;
+        gotoxy(5, 5);
+        cout << "\7Account not found";
+        getch();
+        return;
     }
     box_for_display(t_accno);
     int row = 7, flag;
@@ -1145,42 +1145,42 @@ void account::display_account(void)
     file.open("BANKING.DAT", ios::in);
     while (file.read((char *)this, sizeof(account)))
     {
-	if (accno == t_accno)
-	{
-	    flag = 0;
-	    delay(10);
-	    gotoxy(4, row);
-	    cout << dd << "/" << mm << "/" << yy;
-	    gotoxy(16, row);
-	    cout << type;
-	    if (tran == 'D')
-		gotoxy(30, row);
-	    else
-		gotoxy(42, row);
-	    cout << amount;
-	    gotoxy(56, row);
-	    cout << interest;
-	    gotoxy(66, row);
-	    cout << balance;
-	    row++;
-	    if (row == 23)
-	    {
-		flag = 1;
-		row = 7;
-		gotoxy(4, 24);
-		cout << "Press any key to continue...";
-		getch();
-		clrscr();
-		box_for_display(t_accno);
-	    }
-	}
+        if (accno == t_accno)
+        {
+            flag = 0;
+            delay(10);
+            gotoxy(4, row);
+            cout << dd << "/" << mm << "/" << yy;
+            gotoxy(16, row);
+            cout << type;
+            if (tran == 'D')
+                gotoxy(30, row);
+            else
+                gotoxy(42, row);
+            cout << amount;
+            gotoxy(56, row);
+            cout << interest;
+            gotoxy(66, row);
+            cout << balance;
+            row++;
+            if (row == 23)
+            {
+                flag = 1;
+                row = 7;
+                gotoxy(4, 24);
+                cout << "Press any key to continue...";
+                getch();
+                clrscr();
+                box_for_display(t_accno);
+            }
+        }
     }
     file.close();
     if (!flag)
     {
-	gotoxy(4, 24);
-	cout << "Press any key to continue...";
-	getch();
+        gotoxy(4, 24);
+        cout << "Press any key to continue...";
+        getch();
     }
 }
 
@@ -1194,18 +1194,18 @@ int account::no_of_days(int d1, int m1, int y1, int d2, int m2, int y2)
     int days = 0;
     while (d1 != d2 || m1 != m2 || y1 != y2)
     {
-	days++;
-	d1++;
-	if (d1 > month[m1 - 1])
-	{
-	    d1 = 1;
-	    m1++;
-	}
-	if (m1 > 12)
-	{
-	    m1 = 1;
-	    y1++;
-	}
+        days++;
+        d1++;
+        if (d1 > month[m1 - 1])
+        {
+            d1 = 1;
+            m1++;
+        }
+        if (m1 > 12)
+        {
+            m1 = 1;
+            y1++;
+        }
     }
     return days;
 }
@@ -1222,13 +1222,13 @@ float account::calculate_interest(int t_accno, float t_balance)
     int d1, m1, y1, days;
     while (file.read((char *)this, sizeof(account)))
     {
-	if (accno == t_accno)
-	{
-	    d1 = dd;
-	    m1 = mm;
-	    y1 = yy;
-	    break;
-	}
+        if (accno == t_accno)
+        {
+            d1 = dd;
+            m1 = mm;
+            y1 = yy;
+            break;
+        }
     }
     int d2, m2, y2;
     struct date d;
@@ -1238,13 +1238,13 @@ float account::calculate_interest(int t_accno, float t_balance)
     y2 = d.da_year;
     float t_interest = 0.0;
     if ((y2 < y1) || (y2 == y1 && m2 < m1) || (y2 == y1 && m2 == m1 && d2 < d1))
-	return t_interest;
+        return t_interest;
     days = no_of_days(d1, m1, y1, d2, m2, y2);
     int months = 0;
     if (days >= 30)
     {
-	months = days / 30;
-	t_interest = ((t_balance * 2) / 100) * months;
+        months = days / 30;
+        t_interest = ((t_balance * 2) / 100) * months;
     }
     file.close();
     return t_interest;
@@ -1267,15 +1267,15 @@ void account::transaction(void)
     t = atoi(t_acc);
     t_accno = t;
     if (t_accno == 0)
-	return;
+        return;
     clrscr();
     initial ini;
     if (!ini.found_account(t_accno))
     {
-	gotoxy(5, 5);
-	cout << "\7Account not found";
-	getch();
-	return;
+        gotoxy(5, 5);
+        cout << "\7Account not found";
+        getch();
+        return;
     }
     shape s;
     s.box(2, 2, 79, 24, 218);
@@ -1286,7 +1286,7 @@ void account::transaction(void)
     textbackground(WHITE);
     gotoxy(3, 3);
     for (int i = 1; i <= 76; i++)
-	cprintf(" ");
+        cprintf(" ");
     textbackground(BLACK);
     textcolor(BLACK + BLINK);
     textbackground(WHITE);
@@ -1321,79 +1321,79 @@ void account::transaction(void)
     float t_amount, t_amt;
     do
     {
-	clear(5, 18);
-	valid = 1;
-	gotoxy(5, 18);
-	cout << "Deposit or Withdraw (D/W) : ";
-	t_tran = getche();
-	if (t_tran == '0')
-	    return;
-	t_tran = toupper(t_tran);
+        clear(5, 18);
+        valid = 1;
+        gotoxy(5, 18);
+        cout << "Deposit or Withdraw (D/W) : ";
+        t_tran = getche();
+        if (t_tran == '0')
+            return;
+        t_tran = toupper(t_tran);
     } while (t_tran != 'D' && t_tran != 'W');
     do
     {
-	clear(5, 19);
-	clear(5, 23);
-	gotoxy(5, 23);
-	cout << "ENTER TRANSACTION BY CASH OR CHEQUE";
-	valid = 1;
-	gotoxy(5, 19);
-	cout << "(Cash/Cheque) : ";
-	gets(t_type);
-	strupr(t_type);
-	if (t_type[0] == '0')
-	    return;
-	if (strcmp(t_type, "CASH") && strcmp(t_type, "CHEQUE"))
-	{
-	    valid = 0;
-	    gotoxy(5, 23);
-	    cprintf("\7ENTER CORRECTLY                       ");
-	    getch();
-	}
+        clear(5, 19);
+        clear(5, 23);
+        gotoxy(5, 23);
+        cout << "ENTER TRANSACTION BY CASH OR CHEQUE";
+        valid = 1;
+        gotoxy(5, 19);
+        cout << "(Cash/Cheque) : ";
+        gets(t_type);
+        strupr(t_type);
+        if (t_type[0] == '0')
+            return;
+        if (strcmp(t_type, "CASH") && strcmp(t_type, "CHEQUE"))
+        {
+            valid = 0;
+            gotoxy(5, 23);
+            cprintf("\7ENTER CORRECTLY                       ");
+            getch();
+        }
     } while (!valid);
     do
     {
-	clear(5, 21);
-	clear(5, 23);
-	gotoxy(5, 23);
-	cout << "ENTER AMOUNT FOR TRANSACTION";
-	valid = 1;
-	gotoxy(5, 21);
-	cout << "Amount : Rs.";
-	gets(tm);
-	t_amt = atof(tm);
-	t_amount = t_amt;
-	if (tm[0] == '0')
-	    return;
-	if ((t_tran == 'W' && t_amount > t_balance) || (t_amount < 1))
-	{
-	    valid = 0;
-	    gotoxy(5, 23);
-	    cprintf("\7INVALID DATA ENTERED               ");
-	    getch();
-	}
+        clear(5, 21);
+        clear(5, 23);
+        gotoxy(5, 23);
+        cout << "ENTER AMOUNT FOR TRANSACTION";
+        valid = 1;
+        gotoxy(5, 21);
+        cout << "Amount : Rs.";
+        gets(tm);
+        t_amt = atof(tm);
+        t_amount = t_amt;
+        if (tm[0] == '0')
+            return;
+        if ((t_tran == 'W' && t_amount > t_balance) || (t_amount < 1))
+        {
+            valid = 0;
+            gotoxy(5, 23);
+            cprintf("\7INVALID DATA ENTERED               ");
+            getch();
+        }
     } while (!valid);
     char ch;
     clear(5, 23);
     do
     {
-	clear(40, 20);
-	valid = 1;
-	gotoxy(40, 20);
-	cout << "Save transaction (y/n): ";
-	ch = getche();
-	if (ch == '0')
-	    return;
-	ch = toupper(ch);
+        clear(40, 20);
+        valid = 1;
+        gotoxy(40, 20);
+        cout << "Save transaction (y/n): ";
+        ch = getche();
+        if (ch == '0')
+            return;
+        ch = toupper(ch);
     } while (ch != 'N' && ch != 'Y');
     if (ch == 'N')
-	return;
+        return;
     float t_interest;
     t_interest = calculate_interest(t_accno, t_balance);
     if (t_tran == 'D')
-	t_balance = t_balance + t_amount + t_interest;
+        t_balance = t_balance + t_amount + t_interest;
     else
-	t_balance = (t_balance - t_amount) + t_interest;
+        t_balance = (t_balance - t_amount) + t_interest;
     ini.update_balance(t_accno, t_balance);
     add_to_file(t_accno, d1, m1, y1, t_tran, t_type, t_interest, t_amount, t_balance);
 }
@@ -1415,15 +1415,15 @@ void account::close_account(void)
     t = atoi(t_acc);
     t_accno = t;
     if (t_accno == 0)
-	return;
+        return;
     clrscr();
     initial ini;
     if (!ini.found_account(t_accno))
     {
-	gotoxy(5, 5);
-	cout << "\7Account not found";
-	getch();
-	return;
+        gotoxy(5, 5);
+        cout << "\7Account not found";
+        getch();
+        return;
     }
     shape s;
     s.box(2, 2, 79, 24, 218);
@@ -1434,7 +1434,7 @@ void account::close_account(void)
     textbackground(WHITE);
     gotoxy(3, 3);
     for (int i = 1; i <= 76; i++)
-	cprintf(" ");
+        cprintf(" ");
     textbackground(BLACK);
     textcolor(BLACK + BLINK);
     textbackground(WHITE);
@@ -1454,16 +1454,16 @@ void account::close_account(void)
     ini.display(t_accno);
     do
     {
-	clear(5, 15);
-	gotoxy(5, 15);
-	cout << "Close this account (y/n): ";
-	ch = getche();
-	if (ch == '0')
-	    return;
-	ch = toupper(ch);
+        clear(5, 15);
+        gotoxy(5, 15);
+        cout << "Close this account (y/n): ";
+        ch = getche();
+        if (ch == '0')
+            return;
+        ch = toupper(ch);
     } while (ch != 'N' && ch != 'Y');
     if (ch == 'N')
-	return;
+        return;
     ini.delete_account(t_accno);
     delete_account(t_accno);
     gotoxy(5, 20);
