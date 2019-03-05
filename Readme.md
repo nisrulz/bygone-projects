@@ -9,7 +9,7 @@ This repository contains projects that I had worked upon in my past, possibly wh
 [Nishant Srivastava](https://github.com/nisrulz) ([@nisrulz](https://www.twitter.com/nisrulz))
 
 > If you found these examples helpful or you learned something from their source code and want to thank me, consider buying me a cup of :coffee:
->  + [PayPal](https://www.paypal.me/nisrulz/5)
+>  + [PayPal](https://www.paypal.me/nisrulz/5usd)
 >  + Bitcoin Address: 13PjuJcfVW2Ad81fawqwLtku4bZLv1AxCL
 
 
